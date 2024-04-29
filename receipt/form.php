@@ -100,7 +100,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="modal_amount" class="form-label">Amount</label>
-                                            <input type="text" class="form-control" name="modal_amount" required>
+                                            <input type="number" class="form-control" name="modal_amount" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="modal_note" class="form-label">Note</label>
