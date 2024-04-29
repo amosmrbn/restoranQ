@@ -27,7 +27,7 @@
                                 <input type="text" class="form-control" name="username" value="<?= $user ? $user['username'] : ''?>" required>
                             </div>
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
+                                <label for="username" class="form-label">Password</label>
                                 <?php if($id):?>
                                     <input type="password" class="form-control" name="password" disabled>
                                 <?php else:?>

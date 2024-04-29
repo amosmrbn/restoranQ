@@ -51,7 +51,7 @@ if(!isset($_SESSION['id'])){
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item text-warning" href="../receipt/">Receipts</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">Report</a></li>
+                                <li><a class="dropdown-item text-warning" href="../report/">Report</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

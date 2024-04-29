@@ -10,8 +10,8 @@
         
 <div class="container mt-5">
     <div class="row ">
-        <div class="col-md-8 ">
-            <div class="card" style="width: 820px;">
+        <div class="col-md-12 ">
+            <div class="card" style="width: 920px; margin-left:65px">
                 <div class="card-header text-center ">
                     <h2 class="title-section "><?= $id ? "Edit" : "Add"; ?> Receipts</h2>
                     <?php
@@ -64,10 +64,11 @@
                 // Inisialisasi total
                 $total = 0;
                 ?>
-                <table id="my-datatables" class="table table-striped display">
-                    <!-- <a href="modal-detail.php" class="btn btn-primary" id="btn-add">Add</a> -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdd">Add</button>
-                    <!-- Modal untuk form input -->
+
+
+                <table id="my-datatables" class="table table-striped table-bordered">
+                    <button type="button" style="color:white;" class="btn" id="btn-add" data-bs-toggle="modal" data-bs-target="#modalAdd">Add</button>
+                    <!-- Modal untuk form detail receipt -->
                     <div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="modalAddLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -76,7 +77,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form method="POST" action="receipt-post-process.php">
+                                    <form method="POST" action="detail-receipt-post-process.php">
                                         <input type="hidden" name="modal_receipt_id" value="<?= $id; ?>">
                                         <div class="mb-3">
                                             <label for="modal_menu_id" class="form-label">Menu</label>
@@ -106,8 +107,8 @@
                                             <input type="text" class="form-control" name="modal_note">
                                         </div>
                                         <div class="d-flex gap-2">
-                                            <button type="submit" class="btn btn-primary" name="submit">Save</button>
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-warning" name="submit">Save</button>
+                                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
                                         </div>
                                     </form>
                                 </div>
@@ -140,10 +141,13 @@
                             <td><?= number_format($receipt_detail["subtotal"], 0, '.', '.'); ?></td>
                             <td>
                                 <div class="d-flex">
-                                    <a href="form.php?id=<?= $receipt['id'];?>" class="btn btn-warning btn-sm me-2">Edit</a>
-                                    <form action="delete-process.php" method="post">
-                                        <input  type="hidden" name="id" value="<?= $receipt['id']; ?>">
-                                        <button type="submit" name="submit" onclick="return confirm('Anda yakin menghapus data ini?');" class="btn btn-danger btn-sm">Delete</button>
+                                    
+                                    <form action="detail-delete-process.php" method="post">
+                                        <input type="hidden" name="id" value="<?=  $receipt_detail["id"]; ?>">
+                                        <input type="hidden" name="receipt_id" value="<?= $id; ?>">
+                                        <button type="submit" name="submit"
+                                            onclick="return confirm('Anda yakin menghapus data ini?');"
+                                            class="btn btn-danger btn-sm">Delete</button>
                                     </form>
                                 </div>
                             </td>
