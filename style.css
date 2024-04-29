@@ -1,0 +1,25 @@
+.navbar {
+  color: #004d99;
+}
+
+.title-section {
+  text-align: center;
+}
+
+.btn {
+  width: 85px;
+}
+
+#btn-add {
+  background-color: #004d99 !important;
+  border: none;
+}
+
+#btn-add:hover {
+  background-color: #004181 !important;
+  border: none;
+}
+
+.size {
+  width: 1px;
+}
